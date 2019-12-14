@@ -24,7 +24,7 @@ def xy2uv(xy_chromacity):
     
 
 def XYZ(spd):
-    xyz_cmf = pd.read_csv('ciexyz31_1.csv', index_col = 0)
+    xyz_cmf = pd.read_csv('colorimetry/ciexyz31_1.csv', index_col = 0)
     spd = spd[(spd.index >= 380) & (spd.index <= 780)]
     for i in ['X', 'Y', 'Z']:
         f = interpolate.interp1d(xyz_cmf.index, xyz_cmf[i])
